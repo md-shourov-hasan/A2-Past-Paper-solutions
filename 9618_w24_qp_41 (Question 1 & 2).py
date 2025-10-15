@@ -1,3 +1,42 @@
+#Question 1
+def ReadData():
+    Data_array = [] #stores 45 items
+    file = open("Data.txt","r")
+    for line in file:
+        Data_array.append(line.strip())
+    file.close()
+    return Data_array
+
+
+def FormatArray(String_Array):
+    size = len(String_Array)
+    concatenated_string = ""
+
+    for i in range(0,size):
+        concatenated_string = concatenated_string + String_Array[i] + " "
+
+    return concatenated_string
+
+print(FormatArray(ReadData()))
+
+def CompareStrings(firstString,secondString):
+    index = 0
+
+    while True:
+        if firstString[index] == secondString[index]:
+            index += 1
+        else:
+            if firstString[index] > secondString[index]:
+                return 1
+            else: 
+                return 2
+    
+def Bubble(Data_array):
+#to be continued
+
+
+Question 2
+
 class Horse:
     def __init__(self,Name,MaxFenceHeight,PercentageSuccess):
         self.__Name = Name #String
