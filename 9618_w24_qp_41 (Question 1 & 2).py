@@ -18,8 +18,6 @@ def FormatArray(String_Array):
     return concatenated_string
 
 
-print(FormatArray(ReadData()))
-
 
 def CompareStrings(firstString, secondString):
     index = 0
@@ -28,20 +26,32 @@ def CompareStrings(firstString, secondString):
         if firstString[index] == secondString[index]:
             index += 1
         else:
-            if firstString[index] > secondString[index]:
+            if firstString[index] < secondString[index]:
                 return 1
             else:
                 return 2
 
 
 def Bubble(Data_array):
+    length = len(Data_array)
+
+    sorted = False
+    while not sorted:
+        sorted = True
+        for i in range(0, length - 1):
+            if CompareStrings(Data_array[i],Data_array[i+1]) == 2:
+                Data_array[i], Data_array[i+1] = Data_array[i+1], Data_array[i]
+                sorted = False
+#main program
+Main_array = ReadData()
+print(FormatArray(Main_array))
+
+Bubble(Main_array)
+print(FormatArray(Main_array))
 
 
-#  to be continued
 
-
-# Question 2
-
+#Question 2
 
 class Horse:
     def __init__(self, Name, MaxFenceHeight, PercentageSuccess):
