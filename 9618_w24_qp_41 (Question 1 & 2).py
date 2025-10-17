@@ -123,5 +123,13 @@ for h in range(2):
     avg = 0
     for f in range(4):
         chances = Horses[h].Success(Course[f].GetHeight(), Course[f].GetRisk())
-        print("The horse ", Horses[h].GetName(), " at fence ", f + 1, "has a ",chances,"%chance of success" )
+        total += chances
 
+        print(f"The horse {Horses[h].GetName()} at fence {f + 1} has a {chances}% chance of success" )
+    avg = total / 4
+    print(f"The horse {Horses[h].GetName()} has an average {avg}% chance of jumping over all four fences")
+    if avg > max_avg:
+        max_avg = avg
+        maxHorseIndex = h
+
+print(f"The horse {Horses[maxHorseIndex].GetName()} has the highest average chance of success.")
