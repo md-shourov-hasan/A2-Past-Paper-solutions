@@ -1,4 +1,5 @@
 #Solution goes here
+#Quesion 1
 
 def Initialise():
     NumberItems = int(input("Enter quantity of numbers you want to enter: "))
@@ -49,3 +50,28 @@ print(DataStored)
 
 Search = int(input("Enter a number to search: "))
 print(BinarySearch(Search))
+
+
+#Question 2
+
+class Tree:
+    def __init__(self,TreeName, HeightGrowth, MaxHeight, MaxWidth, Evergreen):
+        self.__TreeName = TreeName
+        self.__HeightGrowth = HeightGrowth
+        self.__MaxHeight = MaxHeight
+        self.__MaxWidth = MaxWidth
+        self.__Evergreen = Evergreen
+    
+    def GetTreeName(self):
+        return self.__TreeName
+    def GetGrowth(self):
+        return self.__HeightGrowth
+    def GetMaxHeight(self):
+        return self.__MaxHeight
+    def GetMaxWidth(self):
+        return self.__MaxWidth
+    def GetEvergreen(self):
+        return self.__Evergreen
+
+#TO be continued
+
