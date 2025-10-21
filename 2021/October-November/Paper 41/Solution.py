@@ -1,5 +1,5 @@
 #Question 2
-from pydoc import describe
+
 
 
 class Picture:
@@ -32,6 +32,7 @@ def ReadData():
             framecolour = file.readline().strip()
             Pictures.append(Picture(description,width,height,framecolour))
             description = file.readline().strip()
+        #This is the other way
         # count = 1
         # for line in file:
         #     if count == 1 :
