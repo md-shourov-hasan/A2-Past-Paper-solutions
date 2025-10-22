@@ -56,11 +56,11 @@ print(BinarySearch(Search))
 
 class Tree:
     def __init__(self,TreeName, HeightGrowth, MaxHeight, MaxWidth, Evergreen):
-        self.__TreeName = TreeName
-        self.__HeightGrowth = HeightGrowth
-        self.__MaxHeight = MaxHeight
-        self.__MaxWidth = MaxWidth
-        self.__Evergreen = Evergreen
+        self.__TreeName = TreeName #String
+        self.__HeightGrowth = HeightGrowth #Integer
+        self.__MaxHeight = MaxHeight #Integer
+        self.__MaxWidth = MaxWidth #Integer
+        self.__Evergreen = Evergreen #String
     
     def GetTreeName(self):
         return self.__TreeName
@@ -73,5 +73,43 @@ class Tree:
     def GetEvergreen(self):
         return self.__Evergreen
 
-#TO be continued
 
+
+def ReadData():
+    DataArray = [] #Type Tree
+
+    try:
+        file = open("Tree.txt","r")
+
+        for line in file:
+            Data = line.strip()
+            
+            count = 1
+            for i in range(len(Data)):
+                if Data[i] == "," or Data[i] =="":
+                    if count == 1:
+                        TreeName = text
+                        text = ""
+                        count += 1
+                    elif count == 2:
+                        Growth = text
+                        text = ""
+                        count +=1
+                    elif count == 3:
+                        Height = text
+                        text = ""
+                        count +=1
+                    elif count == 4:
+                        Width = text
+                        text = ""
+                        count +=1
+                    elif count == 5:
+                        Evergreen = text
+                        text = ""
+                        count = 1                    
+                else:
+                    text = text + Data[i]
+            DataArray.append(Tree(TreeName, Growth, Height, Width, Evergreen))
+
+    except IOError:
+        print("File not found!")
