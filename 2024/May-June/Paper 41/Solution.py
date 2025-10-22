@@ -82,34 +82,10 @@ def ReadData():
         file = open("Tree.txt","r")
 
         for line in file:
-            Data = line.strip()
-            
-            count = 1
-            for i in range(len(Data)):
-                if Data[i] == "," or Data[i] =="":
-                    if count == 1:
-                        TreeName = text
-                        text = ""
-                        count += 1
-                    elif count == 2:
-                        Growth = text
-                        text = ""
-                        count +=1
-                    elif count == 3:
-                        Height = text
-                        text = ""
-                        count +=1
-                    elif count == 4:
-                        Width = text
-                        text = ""
-                        count +=1
-                    elif count == 5:
-                        Evergreen = text
-                        text = ""
-                        count = 1                    
-                else:
-                    text = text + Data[i]
-            DataArray.append(Tree(TreeName, Growth, Height, Width, Evergreen))
+            text = line.strip().split(",")
+            DataArray.append(Tree(text[0], int(text[1]), int(text[2]), int(text[3]), text[4]))            
+        file.close()
+        return DataArray
 
     except IOError:
         print("File not found!")
