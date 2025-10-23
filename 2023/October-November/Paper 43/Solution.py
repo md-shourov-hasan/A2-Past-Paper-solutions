@@ -30,7 +30,40 @@ print(RecursiveVowels("imagine"))
 
 #Question 2
 
+global Queue
+global HeadPointer
+global TailPointer
 
+Queue = [] #stores 50 strings
+HeadPointer = -1
+TailPointer = 0
+
+#need to fix some issues here
+def Enqueue(DataToAdd):
+    global TailPointer, HeadPointer
+    HeadPointer = 0
+
+    if TailPointer > 49:
+        print("Queue is full!")
+    else:
+        Queue.append(DataToAdd)
+        TailPointer += 1
+
+def Dequeue():
+    global  HeadPointer
+    if HeadPointer == -1:
+        print("Empty")
+    else:
+        DataToRemove = Queue[HeadPointer]
+        HeadPointer -= 1
+        return DataToRemove     
+
+def ReadData():
+    file = open("QueueData.txt")
+    for line in file:
+        Enqueue(line.strip())
+    file.close()
+    
 
 
 #Question 3
