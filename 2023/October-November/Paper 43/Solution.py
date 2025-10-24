@@ -56,7 +56,7 @@ def Dequeue():
     else:
         DataToRemove = Queue[HeadPointer]
         HeadPointer += 1
-        return DataToRemove     
+        return DataToRemove
 
 def ReadData():
     file = open("QueueData.txt")
@@ -109,7 +109,7 @@ OutputRecords()
 
 
 
-Question 3
+#Question 3
 
 class Character:
     def __init__(self, Name, XPosition, YPosition):
@@ -125,18 +125,61 @@ class Character:
     def SetXPosition(self, value):
         if value > 10000:
             value = 10000
-            self.__XPosition = value
         elif value < 0 :
             value = 0
-            self.__XPosition = value
+        self.__XPosition = value
     def SetYPosition(self, value):
         if value > 10000:
             value = 10000
-            self.__YPosition = value
         elif value < 0 :
             value = 0
-            self.__YPosition = value
+        self.__YPosition = value
 
-    #to be continued
+    def Move(self,Direction):
+        if Direction == "up":
+            self.SetYPosition(self.GetYPosition() + 10)
+        elif Direction == "down":
+            self.SetYPosition(self.GetYPosition() - 10)
+        elif Direction == "left":
+            self.SetXPosition(self.GetXPosition() - 10)
+        elif Direction == "right":
+            self.SetXPosition(self.GetXPosition() + 10)
+
+class BikeCharacter(Character):
+        def __init__(self, Name, XPosition, YPosition):
+            super().__init__(Name,XPosition,YPosition)
+
+        def Move(self,Direction):
+            if Direction == "up":
+                self.SetYPosition(self.GetYPosition() + 20)
+            elif Direction == "down":
+                self.SetYPosition(self.GetYPosition() - 20)
+            elif Direction == "left":
+                self.SetXPosition(self.GetXPosition() - 20)
+            elif Direction == "right":
+                self.SetXPosition(self.GetXPosition() + 20)
 
 
+
+Jack = Character("jack", 50, 50)
+Karla = BikeCharacter("karla", 100, 50)
+
+
+Name = input("Enter the name of the character you want to move: ")
+
+if Name == "jack":
+    Direction = input("Enter the direction you want to move: ")
+    if Direction != "up" and Direction != "down" and Direction != "left" and Direction != "right":
+        print("Invalid Direction")
+    else:
+        Jack.Move(Direction)
+        print(f"Jack's new position is X = {Jack.GetXPosition()} Y = {Jack.GetYPosition()}")
+elif Name == "karla":
+    Direction = input("Enter the direction you want to move: ")
+    if Direction != "up" and Direction != "down" and Direction != "left" and Direction != "right":
+        print("Invalid Direction")
+    else:
+        Karla.Move(Direction)
+        print(f"Karla's new position is X = {Karla.GetXPosition()} Y = {Karla.GetYPosition()}")
+else:
+    print("Character not found!")
