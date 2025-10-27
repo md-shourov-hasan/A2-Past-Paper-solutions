@@ -54,8 +54,8 @@ def BinarySearch(IntegerArray, First, Last, ToFind):
 
 
 
-# #Main Program
-#
+#Main Program
+
 NumberArray=[]
 NumberArray.append(100)
 NumberArray.append(85)
@@ -64,13 +64,18 @@ NumberArray.append(22)
 NumberArray.append(15)
 NumberArray.append(8)
 NumberArray.append(1)
-#
-#
-# print("Recursive")
-# print(RecursiveInsertion(NumberArray,len(NumberArray)))
-#
-#
+
+
+print("Recursive")
+print(RecursiveInsertion(NumberArray,len(NumberArray)))
+
+
 print("iterative")
 print(IterativeInsertiion(NumberArray))
 
-print(BinarySearch(NumberArray,0,6,100))
+index = BinarySearch(NumberArray,0,6,644)
+
+if index == -1:
+    print("Not found")
+else:
+    print(index)
