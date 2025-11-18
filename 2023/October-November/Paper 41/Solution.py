@@ -1,5 +1,5 @@
 #Question 1
-from functools import total_ordering
+
 
 
 def IterativeVowels(Value):
