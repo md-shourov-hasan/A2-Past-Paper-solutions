@@ -9,11 +9,40 @@ class Card:
         return self.__Colour
 
 class Hand:
-    def __int__(self, Cards, FirstCard, NumberCards):
-        self.__Cards = Cards #Array of Type Card
-        self.__FirstCard = FirstCard #Integer
-        self.__NumberCards = NumberCards #Integer
+    #Cards an array of type Card
+    #FirstCard Integer
+    #NumberCards Integer
 
+    def __init__(self, Card1, Card2, Card3, Card4, Card5):
+        self.__Cards = []
+        self.__Cards.append(Card1)
+        self.__Cards.append(Card2)
+        self.__Cards.append(Card3)
+        self.__Cards.append(Card4)
+        self.__Cards.append(Card5)
+        self.__FirstCard = 0
+        self.__NumberCards = 5
+
+    def GetCard(self,index):
+        return self.__Cards[index]
+
+
+def CalculateValue(PlayerHand):
+    Score = 0
+
+    for i in range(5):
+        CurrentCard = PlayerHand.GetCard(i)
+        CardColour = CurrentCard.GetColour()
+
+        if CardColour == "red":
+            Score += 5
+        elif CardColour == "blue":
+            Score += 10
+        elif CardColour == "yellow":
+            Score += 15
+        Score += CurrentCard.GetNumber()
+
+    return Score
 
 
 
@@ -40,4 +69,16 @@ fiveY = Card(5, "yellow")
 
 
 
-#to be continued
+Player1 = Hand(oneR, twoR, threeR, fourR, oneY)
+Player2 = Hand(twoY, threeY, fourY, fiveY, oneB)
+
+Player1_Score = CalculateValue(Player1)
+Player2_Score = CalculateValue(Player2)
+
+if Player1_Score > Player2_Score:
+    print("Player 1 won the game")
+elif Player2_Score > Player1_Score:
+    print("Player 2 won the game")
+else:
+    print("It's a draw")
+
