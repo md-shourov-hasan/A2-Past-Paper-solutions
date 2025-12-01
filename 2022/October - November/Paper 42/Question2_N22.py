@@ -14,7 +14,25 @@ class Character:
     def ChangePosition(self, XChange, YChange):
         self.__XCoordinate += XChange
         self.__YCoordinate += YChange
-#to be continued
+
+
+#Main program
+
+Character_Array = []#stores 10 elements of type Character
+
+try:
+    CharacterFile = open("Characters.txt")
+
+    for line in CharacterFile:
+        #to be continued
+
+
+
+    CharacterFile.close()
+except IOError:
+    print("File not found!")
+
+
 
 
 
