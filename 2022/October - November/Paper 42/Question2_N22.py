@@ -23,14 +23,19 @@ Character_Array = []#stores 10 elements of type Character
 try:
     CharacterFile = open("Characters.txt")
 
-    for line in CharacterFile:
-        #to be continued
+    name = CharacterFile.readline().strip()
 
-
+    while name != "":
+        x = int(CharacterFile.readline())
+        y = int(CharacterFile.readline())
+        Character_Array.append(Character(name, x, y ))
+        name = CharacterFile.readline()
 
     CharacterFile.close()
 except IOError:
     print("File not found!")
+
+#to be continued
 
 
 
