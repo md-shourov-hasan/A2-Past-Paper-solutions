@@ -26,14 +26,27 @@ try:
     name = CharacterFile.readline().strip()
 
     while name != "":
-        x = int(CharacterFile.readline())
-        y = int(CharacterFile.readline())
+        x = int(CharacterFile.readline().strip())
+        y = int(CharacterFile.readline().strip())
+
         Character_Array.append(Character(name, x, y ))
-        name = CharacterFile.readline()
+        name = CharacterFile.readline().strip()
 
     CharacterFile.close()
+
 except IOError:
     print("File not found!")
+
+Found = False
+
+while not Found:
+    CharacterName = input("Enter the character name: ")
+    for index in range(10):
+        if CharacterName == Character_Array[index].GetName():
+            Found = True
+            position = index
+
+
 
 #to be continued
 
