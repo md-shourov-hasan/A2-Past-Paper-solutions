@@ -65,9 +65,5 @@ print(f"{CharacterName} has changed coordinates to X = {Character_Array[position
 
 
 
-#to be continued
-
-
-
 
 
