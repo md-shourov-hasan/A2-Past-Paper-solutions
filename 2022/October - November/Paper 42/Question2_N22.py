@@ -37,14 +37,31 @@ try:
 except IOError:
     print("File not found!")
 
-Found = False
+position = -1
 
-while not Found:
+while position == -1 :
     CharacterName = input("Enter the character name: ")
     for index in range(10):
-        if CharacterName == Character_Array[index].GetName():
-            Found = True
+        if CharacterName.lower() == Character_Array[index].GetName().lower():
             position = index
+
+
+move = input("Enter a move: ")
+
+while move != "A" and move != "S" and move != "W" and move != "D":
+    move = input("Enter a move: ")
+
+if move == "A":
+    Character_Array[position].ChangePosition(-1,0)
+elif move == "W":
+    Character_Array[position].ChangePosition(0,1)
+elif move == "S":
+    Character_Array[position].ChangePosition(0,-1)
+else:
+    Character_Array[position].ChangePosition(1,0)
+
+
+print(f"{CharacterName} has changed coordinates to X = {Character_Array[position].GetX()} and Y = {Character_Array[position].GetY()}")
 
 
 
