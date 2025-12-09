@@ -2,8 +2,11 @@ def OutputItems():
     global StackData
     global StackPointer
 
-    for i in range(10):
-        print(StackData[i])
+    count = 0
+    while count < StackPointer:
+        print(StackData[count])
+        count+=1
+
     print("The StackPointer Value is: ", StackPointer)
 
 
@@ -26,7 +29,7 @@ def Pop():
         return -1
     StackPointer -= 1
 
-    Data = StackData[StackPointer]
+    return StackData[StackPointer]
 
 
 
@@ -48,8 +51,8 @@ for _ in range(11):
 
 OutputItems()
 
-Pop()
-Pop()
+print(f"The value popped:{Pop()}")
+print(f"The value popped:{Pop()}")
 
 OutputItems()
 
