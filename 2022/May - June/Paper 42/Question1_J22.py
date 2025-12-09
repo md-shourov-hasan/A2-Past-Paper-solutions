@@ -56,4 +56,3 @@ print(f"The value popped:{Pop()}")
 
 OutputItems()
 
-#it has some error
