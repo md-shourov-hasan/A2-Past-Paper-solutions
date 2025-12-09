@@ -51,8 +51,6 @@ for _ in range(11):
 
 OutputItems()
 
-print(f"The value popped:{Pop()}")
-print(f"The value popped:{Pop()}")
 
 OutputItems()
 
