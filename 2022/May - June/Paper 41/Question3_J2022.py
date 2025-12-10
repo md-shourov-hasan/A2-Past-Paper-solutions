@@ -1,10 +1,7 @@
-def Enqueue(DataToAdd):
-    global QueueArray
-    global Tail
-    global NumberOfItems
+def Enqueue(QueueArray, Head, Tail, NumberOfItems, DataToAdd):
 
     if NumberOfItems == 10:
-        return False
+        return False, QueueArray, Head, Tail, NumberOfItems
 
     QueueArray[Tail] = DataToAdd
 
@@ -15,7 +12,7 @@ def Enqueue(DataToAdd):
 
     NumberOfItems += 1
 
-    return True
+    return True, QueueArray, Head, Tail, NumberOfItems
 
 def Dequeue():
     global NumberOfItems
@@ -47,7 +44,7 @@ NumberOfItems = 0 #integer
 for _ in range(11):
     data = input("Enter a string value: ")
 
-    Report = Enqueue(data)
+    Report, QueueArray, Head, Tail, NumberOfItems = Enqueue(QueueArray, Head, Tail, NumberOfItems, data)
 
     if Report:
         print("Successful")
@@ -56,3 +53,4 @@ for _ in range(11):
 
 print(Dequeue())
 print(Dequeue())
+
