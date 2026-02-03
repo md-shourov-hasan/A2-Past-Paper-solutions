@@ -17,7 +17,7 @@ def Push(DataToPush):
     if StackPointer > 9:
         return False
 
-    StackData.append(DataToPush)
+    StackData[StackPointer] = DataToPush
     StackPointer += 1
     return True
 
@@ -38,7 +38,7 @@ def Pop():
 global StackData
 global StackPointer
 
-StackData = [] #Stores 10 integers
+StackData = [0]*10 #Stores 10 integers
 StackPointer = 0
 
 for _ in range(11):
@@ -51,6 +51,7 @@ for _ in range(11):
 
 OutputItems()
 
+Pop()
+Pop()
 
 OutputItems()
-
