@@ -14,7 +14,7 @@ def ChooseCard():
   index = int(input("Enter an index: "))
 
   while index >= 1 and index <= 30:
-    
+
 
 
 
