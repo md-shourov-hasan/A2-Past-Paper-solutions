@@ -74,11 +74,3 @@ TheTree.InsertNode(Node(7))
 TheTree.InsertNode(Node(15))
 
 TheTree.OutputTree()
-
-
-
-
-
-
-
-
