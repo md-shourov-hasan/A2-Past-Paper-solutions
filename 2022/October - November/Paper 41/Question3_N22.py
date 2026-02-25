@@ -27,9 +27,10 @@ def SearchValue(Root, ValueToFind):
 def PostOrder(RootNode):
     if RootNode[0] != -1:
         PostOrder(ArrayNodes[RootNode[0]])
+    print(str(RootNode[1]))
     if RootNode[2] != -1:
         PostOrder(ArrayNodes[RootNode[2]])
-    print(str(RootNode[1]))
+
 
 Result = SearchValue(RootPointer, 15)
 
