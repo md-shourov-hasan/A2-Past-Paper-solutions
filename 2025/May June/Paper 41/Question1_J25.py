@@ -1,9 +1,4 @@
-global Queue
-global HeadPointer
-global TailPointer
-global NumberItems
-
-Queue = [-1]*20
+Queue = [-1 for x in range(20)]
 HeadPointer = -1
 TailPointer = -1
 NumberItems = 0
@@ -17,13 +12,16 @@ def Enqueue(Data):
 
     if NumberItems == 20:
         return False
-    if HeadPointer == -1:
+    if TailPointer == -1:
         HeadPointer = 0
-
-    TailPointer += 1
-    Queue[TailPointer] = Data
+        TailPointer = 0
+        Queue[TailPointer] = Data
+    else:
+        TailPointer += 1
+        if TailPointer == 20:
+            TailPointer = 0
+        Queue[TailPointer] = Data
     NumberItems += 1
-
     return True
 
 def Dequeue():
@@ -37,7 +35,14 @@ def Dequeue():
 
     result = Queue[HeadPointer]
     HeadPointer += 1
+    if HeadPointer == 20:
+        HeadPointer = 0
     NumberItems -= 1
+
+    if NumberItems == 0:
+        HeadPointer = -1
+        TailPointer = -1
+
 
     return result
 

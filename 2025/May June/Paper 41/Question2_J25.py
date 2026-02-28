@@ -27,22 +27,22 @@ def SplitData(DataArray):
     for i in range(length):
         line = DataArray[i].split(",")
 
-        if line[1] == "red":
+        if line[1].strip() == "red":
             Red.append(int(line[0]))
 
-        elif line[1] == "green":
+        elif line[1].strip() == "green":
             Green.append(int(line[0]))
 
-        elif line[1] == "blue":
+        elif line[1].strip() == "blue":
             Blue.append(int(line[0]))
 
-        elif line[1] == "orange":
+        elif line[1].strip() == "orange":
             Orange.append(int(line[0]))
 
-        elif line[1] == "yellow":
+        elif line[1].strip() == "yellow":
             Yellow.append(int(line[0]))
 
-        elif line[1] == "pink":
+        elif line[1].strip() == "pink":
             Pink.append(int(line[0]))
 
     StoreData(Red,"Red.txt")

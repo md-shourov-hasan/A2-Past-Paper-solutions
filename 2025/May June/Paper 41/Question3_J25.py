@@ -29,7 +29,7 @@ class Tree:
 
     def Insert(self, PNode):
 
-        Root = self.GetRootNode()
+        Root = self.__FirstNode
         Found = False
 
         while Found == False:
