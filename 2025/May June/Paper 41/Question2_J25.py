@@ -55,7 +55,7 @@ def SplitData(DataArray):
 
 def StoreData(DataToStore,FileName):
     try:
-        file = open(FileName,"a")
+        file = open(FileName,"w")
         length = len(DataToStore)
         for i in range(length):
             file.write(str(DataToStore[i]) + "\n")
