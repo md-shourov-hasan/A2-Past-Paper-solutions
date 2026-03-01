@@ -1,4 +1,4 @@
-#Question 1
+# Question 1
 
 def IterativeVowels(Value):
     Total = 0
@@ -11,32 +11,33 @@ def IterativeVowels(Value):
 
     return Total
 
+
 def RecursiveVowels(Value):
     if len(Value) == 0:
         return 0
 
     FirstCharacter = Value[0:1]
 
-    if FirstCharacter == "a" or FirstCharacter == "e"or FirstCharacter == "i" or FirstCharacter == "o"or FirstCharacter == "u":
+    if FirstCharacter == "a" or FirstCharacter == "e" or FirstCharacter == "i" or FirstCharacter == "o" or FirstCharacter == "u":
         return 1 + RecursiveVowels(Value[1:len(Value)])
     else:
         return RecursiveVowels(Value[1:len(Value)])
 
 
-
-#main program
+# main program
 print(IterativeVowels("house"))
 print(RecursiveVowels("imagine"))
 
-#Question 2
+# Question 2
 
 global Queue
 global HeadPointer
 global TailPointer
 
-Queue = [] #stores 50 strings
+Queue = []  # stores 50 strings
 HeadPointer = -1
 TailPointer = 0
+
 
 def Enqueue(DataToAdd):
     global TailPointer, HeadPointer
@@ -49,14 +50,16 @@ def Enqueue(DataToAdd):
         Queue.append(DataToAdd)
         TailPointer += 1
 
+
 def Dequeue():
-    global  HeadPointer
+    global HeadPointer
     if HeadPointer == -1:
         return "Empty"
     else:
         DataToRemove = Queue[HeadPointer]
         HeadPointer += 1
         return DataToRemove
+
 
 def ReadData():
     file = open("QueueData.txt")
@@ -66,21 +69,23 @@ def ReadData():
 
 
 class RecordData:
-    def __init__(self, ID,Total):
-        self.ID = ID #String
-        self.Total = Total #Integer
+    def __init__(self, ID, Total):
+        self.ID = ID  # String
+        self.Total = Total  # Integer
+
 
 global Records, NumberRecords
 
-Records = [] #Stores 50 items of type RecordData
-NumberRecords = 0 #Integer
+Records = []  # Stores 50 items of type RecordData
+NumberRecords = 0  # Integer
+
 
 def TotalData():
     global Records, NumberRecords
     DataAccessed = Dequeue()
     Flag = False
     if NumberRecords == 0:
-        Records.append(RecordData(DataAccessed,1))
+        Records.append(RecordData(DataAccessed, 1))
         Flag = True
         NumberRecords += 1
     else:
@@ -90,32 +95,32 @@ def TotalData():
                 Flag = True
 
     if Flag == False:
-        Records.append(RecordData(DataAccessed,1))
+        Records.append(RecordData(DataAccessed, 1))
         NumberRecords += 1
 
+
 def OutputRecords():
-    for _ in range(0,len(Records)):
+    for _ in range(0, len(Records)):
         print(f"ID {Records[i].ID} Total {Records[i].Total}")
 
 
-#main program
+# main program
 ReadData()
 
-for i in range(0,len(Queue)):
+for i in range(0, len(Queue)):
     TotalData()
 
 OutputRecords()
 
 
-
-
-#Question 3
+# Question 3
 
 class Character:
     def __init__(self, Name, XPosition, YPosition):
-        self.__Name = Name #String
-        self.__XPosition = XPosition # Integer
-        self.__YPosition = YPosition # Integer
+        self.__Name = Name  # String
+        self.__XPosition = XPosition  # Integer
+        self.__YPosition = YPosition  # Integer
+
     def GetXPosition(self):
         return self.__XPosition
 
@@ -125,17 +130,18 @@ class Character:
     def SetXPosition(self, value):
         if value > 10000:
             value = 10000
-        elif value < 0 :
+        elif value < 0:
             value = 0
         self.__XPosition = value
+
     def SetYPosition(self, value):
         if value > 10000:
             value = 10000
-        elif value < 0 :
+        elif value < 0:
             value = 0
         self.__YPosition = value
 
-    def Move(self,Direction):
+    def Move(self, Direction):
         if Direction == "up":
             self.SetYPosition(self.GetYPosition() + 10)
         elif Direction == "down":
@@ -145,25 +151,24 @@ class Character:
         elif Direction == "right":
             self.SetXPosition(self.GetXPosition() + 10)
 
+
 class BikeCharacter(Character):
-        def __init__(self, Name, XPosition, YPosition):
-            super().__init__(Name,XPosition,YPosition)
+    def __init__(self, Name, XPosition, YPosition):
+        super().__init__(Name, XPosition, YPosition)
 
-        def Move(self,Direction):
-            if Direction == "up":
-                self.SetYPosition(self.GetYPosition() + 20)
-            elif Direction == "down":
-                self.SetYPosition(self.GetYPosition() - 20)
-            elif Direction == "left":
-                self.SetXPosition(self.GetXPosition() - 20)
-            elif Direction == "right":
-                self.SetXPosition(self.GetXPosition() + 20)
-
+    def Move(self, Direction):
+        if Direction == "up":
+            self.SetYPosition(self.GetYPosition() + 20)
+        elif Direction == "down":
+            self.SetYPosition(self.GetYPosition() - 20)
+        elif Direction == "left":
+            self.SetXPosition(self.GetXPosition() - 20)
+        elif Direction == "right":
+            self.SetXPosition(self.GetXPosition() + 20)
 
 
 Jack = Character("jack", 50, 50)
 Karla = BikeCharacter("karla", 100, 50)
-
 
 Name = input("Enter the name of the character you want to move: ")
 

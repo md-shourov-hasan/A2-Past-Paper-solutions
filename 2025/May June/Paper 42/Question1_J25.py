@@ -1,8 +1,9 @@
 global Stack
 global TopOfStack
 
-Stack = ["-1"]*20 #stores upto 20 elements
+Stack = ["-1"] * 20  # stores upto 20 elements
 TopOfStack = -1
+
 
 def Push(DataToPush):
     global TopOfStack
@@ -16,6 +17,7 @@ def Push(DataToPush):
 
     return 1
 
+
 def Pop():
     global TopOfStack
     global Stack
@@ -26,11 +28,12 @@ def Pop():
     Data = Stack[TopOfStack]
     TopOfStack -= 1
 
-    return  Data
+    return Data
+
 
 def ReadData(FileName):
     try:
-        file = open(FileName,"r")
+        file = open(FileName, "r")
 
         for line in file:
             insert = Push(line.strip())
@@ -41,8 +44,8 @@ def ReadData(FileName):
     except IOError:
         print("File not found")
 
-def Calculate():
 
+def Calculate():
     returnedValue = Pop()
 
     while returnedValue != "-1":
@@ -68,6 +71,7 @@ def Calculate():
         returnedValue = Pop()
 
     return total
+
 
 FileName = input("Enter a filename: ")
 ReadData(FileName)

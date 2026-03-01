@@ -1,17 +1,19 @@
 class Card:
     def __init__(self, Number, Colour):
-        self.__Number = Number #integer
-        self.__Colour = Colour #string
+        self.__Number = Number  # integer
+        self.__Colour = Colour  # string
 
     def GetNumber(self):
         return self.__Number
+
     def GetColour(self):
         return self.__Colour
 
+
 class Hand:
-    #Cards an array of type Card
-    #FirstCard Integer
-    #NumberCards Integer
+    # Cards an array of type Card
+    # FirstCard Integer
+    # NumberCards Integer
 
     def __init__(self, Card1, Card2, Card3, Card4, Card5):
         self.__Cards = []
@@ -23,7 +25,7 @@ class Hand:
         self.__FirstCard = 0
         self.__NumberCards = 5
 
-    def GetCard(self,index):
+    def GetCard(self, index):
         return self.__Cards[index]
 
 
@@ -45,10 +47,6 @@ def CalculateValue(PlayerHand):
     return Score
 
 
-
-
-
-
 oneR = Card(1, "red")
 twoR = Card(2, "red")
 threeR = Card(3, "red")
@@ -67,8 +65,6 @@ threeY = Card(3, "yellow")
 fourY = Card(4, "yellow")
 fiveY = Card(5, "yellow")
 
-
-
 Player1 = Hand(oneR, twoR, threeR, fourR, oneY)
 Player2 = Hand(twoY, threeY, fourY, fiveY, oneB)
 
@@ -81,4 +77,3 @@ elif Player2_Score > Player1_Score:
     print("Player 2 won the game")
 else:
     print("It's a draw")
-

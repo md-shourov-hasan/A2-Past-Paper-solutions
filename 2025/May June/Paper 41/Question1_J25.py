@@ -24,6 +24,7 @@ def Enqueue(Data):
     NumberItems += 1
     return True
 
+
 def Dequeue():
     global Queue
     global HeadPointer
@@ -43,12 +44,11 @@ def Dequeue():
         HeadPointer = -1
         TailPointer = -1
 
-
     return result
 
 
-#main program
-for i in range(1,26):
+# main program
+for i in range(1, 26):
     isSuccessful = Enqueue(i)
 
     if isSuccessful:

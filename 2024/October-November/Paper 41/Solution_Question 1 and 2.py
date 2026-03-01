@@ -1,4 +1,4 @@
-#Question 1
+# Question 1
 def ReadData():
     Data_array = []  # stores 45 items
     file = open("Data.txt", "r")
@@ -16,7 +16,6 @@ def FormatArray(String_Array):
         concatenated_string = concatenated_string + String_Array[i] + " "
 
     return concatenated_string
-
 
 
 def CompareStrings(firstString, secondString):
@@ -39,10 +38,12 @@ def Bubble(Data_array):
     while not sorted:
         sorted = True
         for i in range(0, length - 1):
-            if CompareStrings(Data_array[i],Data_array[i+1]) == 2:
-                Data_array[i], Data_array[i+1] = Data_array[i+1], Data_array[i]
+            if CompareStrings(Data_array[i], Data_array[i + 1]) == 2:
+                Data_array[i], Data_array[i + 1] = Data_array[i + 1], Data_array[i]
                 sorted = False
-#main program
+
+
+# main program
 Main_array = ReadData()
 print(FormatArray(Main_array))
 
@@ -50,8 +51,7 @@ Bubble(Main_array)
 print(FormatArray(Main_array))
 
 
-
-#Question 2
+# Question 2
 
 class Horse:
     def __init__(self, Name, MaxFenceHeight, PercentageSuccess):
@@ -64,7 +64,8 @@ class Horse:
 
     def GetMaxFenceHeight(self):
         return self.__MaxFenceHeight
-#2(d)
+
+    # 2(d)
     def Success(self, FenceHeight, risk):
         if (FenceHeight > self.__MaxFenceHeight):
             return self.__PercentageSuccess * 0.20
@@ -106,7 +107,7 @@ for i in range(4):
         Risk = int(input("Enter the risk: "))
     Course.append(Fence(Height, Risk))
 
-#main program
+# main program
 
 Horses = []
 
@@ -125,7 +126,7 @@ for h in range(2):
         chances = Horses[h].Success(Course[f].GetHeight(), Course[f].GetRisk())
         total += chances
 
-        print(f"The horse {Horses[h].GetName()} at fence {f + 1} has a {chances}% chance of success" )
+        print(f"The horse {Horses[h].GetName()} at fence {f + 1} has a {chances}% chance of success")
     avg = total / 4
     print(f"The horse {Horses[h].GetName()} has an average {avg}% chance of jumping over all four fences")
     if avg > max_avg:

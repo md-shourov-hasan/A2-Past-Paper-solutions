@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, PData):
         self.__LeftPointer = -1
-        self.__Data = PData #integer
+        self.__Data = PData  # integer
         self.__RightPointer = -1
 
     def GetLeft(self):
@@ -25,11 +25,11 @@ class Node:
 
 class TreeClass:
     def __init__(self):
-        self.__Tree = [Node(-1)] * 20 #type Node 20 spaces
-        self.__FirstNode = -1 #integer
-        self.__NumberNodes = 0 #integer
+        self.__Tree = [Node(-1)] * 20  # type Node 20 spaces
+        self.__FirstNode = -1  # integer
+        self.__NumberNodes = 0  # integer
 
-    def InsertNode(self,NewNode):
+    def InsertNode(self, NewNode):
         if self.__NumberNodes == 0:
             self.__Tree[self.__NumberNodes] = NewNode
             self.__NumberNodes += 1
@@ -60,7 +60,8 @@ class TreeClass:
             print("No nodes")
         else:
             for i in range(self.__NumberNodes):
-                print(f"Left Pointer: {self.__Tree[i].GetLeft()} Data: {self.__Tree[i].GetData()} Right Pointer: {self.__Tree[i].GetRight()}")
+                print(
+                    f"Left Pointer: {self.__Tree[i].GetLeft()} Data: {self.__Tree[i].GetData()} Right Pointer: {self.__Tree[i].GetRight()}")
 
 
 TheTree = TreeClass()

@@ -1,35 +1,41 @@
 class NewRecord:
-    def __init__(self,PKey, PItem1, PItem2):
-        self.__Key = PKey #integer
-        self.__Item1 = PItem1 #integer
-        self.__Item2 = PItem2 #integer
+    def __init__(self, PKey, PItem1, PItem2):
+        self.__Key = PKey  # integer
+        self.__Item1 = PItem1  # integer
+        self.__Item2 = PItem2  # integer
 
     def GetKey(self):
         return self.__Key
+
     def GetItem1(self):
         return self.__GetItem1
+
     def GetItem2(self):
         return self.__GetItem2
+
 
 global HashTable
 global Spare
 
-HashTable = [] #store 200 records
-Spare = [] #stores 100 record
+HashTable = []  # store 200 records
+Spare = []  # stores 100 record
+
 
 def Initialise():
     global HashTable
     global Spare
 
-    empty = NewRecord(-1,-1,-1)
+    empty = NewRecord(-1, -1, -1)
 
     for _ in range(200):
         HashTable.append(empty)
     for _ in range(100):
         Spare.append(empty)
 
+
 def CalculateHash(KeyField):
     return KeyField % 200
+
 
 def InsertIntoHash(Record):
     global Spare
@@ -44,6 +50,7 @@ def InsertIntoHash(Record):
             if Spare[x].GetKey() == -1:
                 Spare[x] = Record
                 break
+
 
 def CreateHashTable():
     try:
@@ -60,6 +67,7 @@ def CreateHashTable():
     except IOError:
         print("File not found!")
 
+
 def PrintSpare():
     global Spare
 
@@ -67,6 +75,7 @@ def PrintSpare():
         key = Spare[i].GetKey()
         if key != -1:
             print(key)
+
 
 Initialise()
 CreateHashTable()

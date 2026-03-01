@@ -1,10 +1,11 @@
 TreeArray = []
 
 for _ in range(50):
-    TreeArray.append([-1,-1,-1])
+    TreeArray.append([-1, -1, -1])
 
 RootPointer = -1
 FreeNode = 0
+
 
 def AddNode(DataToStore):
     global FreeNode
@@ -42,10 +43,11 @@ def AddNode(DataToStore):
                     Pointer = TreeArray[Pointer][2]
         FreeNode += 1
 
+
 def WriteAllToFile():
     global TreeArray
     try:
-        File = open("Tree.txt","w")
+        File = open("Tree.txt", "w")
         length = len(TreeArray)
 
         for i in range(length):
@@ -57,10 +59,9 @@ def WriteAllToFile():
         print("Cannot write file")
 
 
-
-#main program
+# main program
 try:
-    File = open("TreeData.txt","r")
+    File = open("TreeData.txt", "r")
 
     for line in File:
         number = int(line.strip())

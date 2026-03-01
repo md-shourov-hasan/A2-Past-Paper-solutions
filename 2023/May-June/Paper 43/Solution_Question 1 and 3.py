@@ -78,7 +78,7 @@ def OutputItem():
 
         print(ColourData, AnimalData)
 
-    elif ColourData == "" :
+    elif ColourData == "":
 
         PushAnimal(AnimalData)
         print("No colour")
@@ -87,6 +87,7 @@ def OutputItem():
 
         PushColour(ColourData)
         print("No animal")
+
 
 ReadData()
 OutputItem()

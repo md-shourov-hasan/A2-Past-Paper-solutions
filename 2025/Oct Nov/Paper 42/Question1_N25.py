@@ -1,9 +1,9 @@
 class Bird:
-    def __init__(self,PSpecies, PDistancePerHour):
-        self.__Species = PSpecies #string
-        self.__DistancePerHour = PDistancePerHour #Real
-        self.__XPosition = 500.0 #Real
-        self.__YPosition = 500.0 #Real
+    def __init__(self, PSpecies, PDistancePerHour):
+        self.__Species = PSpecies  # string
+        self.__DistancePerHour = PDistancePerHour  # Real
+        self.__XPosition = 500.0  # Real
+        self.__YPosition = 500.0  # Real
 
     def GetSpecies(self):
         return self.__Species
@@ -11,8 +11,8 @@ class Bird:
     def GetPosition(self):
         return "X = " + str(self.__XPosition) + " Y = " + str(self.__YPosition)
 
-    def Move(self,Direction,Minutes):
-        distance = (self.__DistancePerHour/60) * Minutes
+    def Move(self, Direction, Minutes):
+        distance = (self.__DistancePerHour / 60) * Minutes
 
         if Direction == 'N':
             self.__YPosition += distance
@@ -23,12 +23,15 @@ class Bird:
         elif Direction == 'W':
             self.__XPosition -= distance
 
-#main program
-FirstBird = Bird("Cockatiel",71.0)
-SecondBird = Bird("Macaw",56.0)
 
-print(f"The species for first bird is: {FirstBird.GetSpecies()} and current X and Y position is {FirstBird.GetPosition()}")
-print(f"The species for second bird is: {SecondBird.GetSpecies()} and current X and Y position is {SecondBird.GetPosition()}")
+# main program
+FirstBird = Bird("Cockatiel", 71.0)
+SecondBird = Bird("Macaw", 56.0)
+
+print(
+    f"The species for first bird is: {FirstBird.GetSpecies()} and current X and Y position is {FirstBird.GetPosition()}")
+print(
+    f"The species for second bird is: {SecondBird.GetSpecies()} and current X and Y position is {SecondBird.GetPosition()}")
 
 User_Bird = input("Select one of the birds to move: ")
 while User_Bird != FirstBird.GetSpecies() and User_Bird != SecondBird.GetSpecies():

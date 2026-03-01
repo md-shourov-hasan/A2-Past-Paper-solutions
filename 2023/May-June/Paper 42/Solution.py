@@ -1,20 +1,22 @@
 class SaleData:
     def __init__(self, ID, Quantity):
-        self.ID = ID # string
-        self.Quantity = Quantity # integer
+        self.ID = ID  # string
+        self.Quantity = Quantity  # integer
+
 
 def Enqueue(RecordToAdd):
     global CircularQueue, Tail, NumberOfItems
     if NumberOfItems == 5:
         return -1
     else:
-         CircularQueue[Tail] = RecordToAdd
-         NumberOfItems += 1
-         if Tail == 4:
-             Tail = 0
-         else:
-             Tail = Tail + 1
-         return 1
+        CircularQueue[Tail] = RecordToAdd
+        NumberOfItems += 1
+        if Tail == 4:
+            Tail = 0
+        else:
+            Tail = Tail + 1
+        return 1
+
 
 def Dequeue():
     global CircularQueue, Head, Tail, NumberOfItems
@@ -29,17 +31,19 @@ def Dequeue():
         NumberOfItems -= 1
         return RecordRemoved
 
+
 def EnterRecord():
     Id = input("Enter the ID: ")
     Qty = int(input("Enter the quantity: "))
-    NewRecord = SaleData(Id,Qty)
+    NewRecord = SaleData(Id, Qty)
 
     if Enqueue(NewRecord) == -1:
         print("Full")
     else:
         print("Stored")
 
-#main program
+
+# main program
 
 global CircularQueue, Head, Tail, NumberOfItems
 CircularQueue = []

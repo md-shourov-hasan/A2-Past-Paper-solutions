@@ -55,13 +55,11 @@ class Tree:
 
 def OutputInOrder(PNode):
     if PNode.GetLeft() != None:
-
         OutputInOrder(PNode.GetLeft())
 
     print(PNode.GetData())
 
     if PNode.GetRight() != None:
-
         OutputInOrder(PNode.GetRight())
 
 

@@ -1,21 +1,25 @@
-#Question 2
-
+# Question 2
 
 
 class Picture:
     def __init__(self, Description, Width, Height, FrameColour):
-        self.__Description = Description #String
-        self.__Width = Width #Integer
-        self.__Height = Height #Integer
-        self.__FrameColour = FrameColour #String
+        self.__Description = Description  # String
+        self.__Width = Width  # Integer
+        self.__Height = Height  # Integer
+        self.__FrameColour = FrameColour  # String
+
     def GetDescription(self):
         return self.__Description
+
     def GetHeight(self):
         return self.__Height
+
     def GetWidth(self):
         return self.__Width
+
     def GetColour(self):
         return self.__FrameColour
+
     def SetDescription(self, NewDescription):
         self.__Description = NewDescription
         return self.__Description
@@ -23,16 +27,16 @@ class Picture:
 
 def ReadData():
     try:
-        file = open("Pictures.txt","r")
-        #There are two ways to read the file
+        file = open("Pictures.txt", "r")
+        # There are two ways to read the file
         description = file.readline().strip()
-        while(description != ""):
+        while (description != ""):
             width = file.readline().strip()
             height = file.readline().strip()
             framecolour = file.readline().strip()
-            Pictures.append(Picture(description,width,height,framecolour))
+            Pictures.append(Picture(description, width, height, framecolour))
             description = file.readline().strip()
-        #This is the other way
+        # This is the other way
         # count = 1
         # for line in file:
         #     if count == 1 :
@@ -50,8 +54,9 @@ def ReadData():
     except IOError:
         print("File not found")
 
-#main program
-Pictures = [] #Stores 100 elements
+
+# main program
+Pictures = []  # Stores 100 elements
 
 ReadData()
 print(Pictures[1].GetColour())

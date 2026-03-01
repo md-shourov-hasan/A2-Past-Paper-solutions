@@ -1,5 +1,4 @@
-#Question 1
-
+# Question 1
 
 
 def IterativeVowels(Value):
@@ -13,7 +12,9 @@ def IterativeVowels(Value):
 
     return Total
 
+
 print(IterativeVowels("house"))
+
 
 def RecursiveVowels(Value):
     if len(Value) == 0:
@@ -25,9 +26,5 @@ def RecursiveVowels(Value):
     else:
         return RecursiveVowels(Value[1:len(Value)])
 
+
 print(RecursiveVowels("imagine"))
-
-
-
-
-

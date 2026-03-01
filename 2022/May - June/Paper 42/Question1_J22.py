@@ -5,7 +5,7 @@ def OutputItems():
     count = 0
     while count < StackPointer:
         print(StackData[count])
-        count+=1
+        count += 1
 
     print("The StackPointer Value is: ", StackPointer)
 
@@ -21,6 +21,7 @@ def Push(DataToPush):
     StackPointer += 1
     return True
 
+
 def Pop():
     global StackData
     global StackPointer
@@ -32,13 +33,12 @@ def Pop():
     return StackData[StackPointer]
 
 
-
-#main program
+# main program
 
 global StackData
 global StackPointer
 
-StackData = [0]*10 #Stores 10 integers
+StackData = [0] * 10  # Stores 10 integers
 StackPointer = 0
 
 for _ in range(11):

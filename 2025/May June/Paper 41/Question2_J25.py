@@ -3,7 +3,7 @@ def ReadData():
     FileName = input("Enter a filename: ")
 
     try:
-        file = open(FileName,"r")
+        file = open(FileName, "r")
 
         for line in file:
             line = line.strip()
@@ -13,6 +13,7 @@ def ReadData():
         return Data
     except IOError:
         print("File couldn't found!")
+
 
 def SplitData(DataArray):
     Red = []
@@ -45,7 +46,7 @@ def SplitData(DataArray):
         elif line[1].strip() == "pink":
             Pink.append(int(line[0]))
 
-    StoreData(Red,"Red.txt")
+    StoreData(Red, "Red.txt")
     StoreData(Blue, "Blue.txt")
     StoreData(Green, "Green.txt")
     StoreData(Orange, "Orange.txt")
@@ -53,9 +54,9 @@ def SplitData(DataArray):
     StoreData(Yellow, "Yellow.txt")
 
 
-def StoreData(DataToStore,FileName):
+def StoreData(DataToStore, FileName):
     try:
-        file = open(FileName,"w")
+        file = open(FileName, "w")
         length = len(DataToStore)
         for i in range(length):
             file.write(str(DataToStore[i]) + "\n")
@@ -65,6 +66,7 @@ def StoreData(DataToStore,FileName):
     except IOError:
         print("File not found!")
 
-#main program
+
+# main program
 Data = ReadData()
 SplitData(Data)

@@ -1,8 +1,8 @@
 class Balloon:
     def __init__(self, DefenceItemName, BalloonColour):
-        self.__DefenceItem = DefenceItemName #String
-        self.__Colour = BalloonColour #String
-        self.__Health = 100 #Integer
+        self.__DefenceItem = DefenceItemName  # String
+        self.__Colour = BalloonColour  # String
+        self.__Health = 100  # Integer
 
     def GetDefenceItem(self):
         return self.__DefenceItem
@@ -15,6 +15,7 @@ class Balloon:
             return True
         else:
             return False
+
 
 def Defend(Object):
     strength = int(input("Enter the strength of the opponent: "))
@@ -33,10 +34,7 @@ def Defend(Object):
     return Object
 
 
-
-
-
-#Main Program
+# Main Program
 
 UserDefenceItem = input("Enter a defence item: ")
 UserColour = input("Enter the colour: ")

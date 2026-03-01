@@ -1,5 +1,4 @@
 def Enqueue(QueueArray, Head, Tail, NumberOfItems, DataToAdd):
-
     if NumberOfItems == 10:
         return False, QueueArray, Head, Tail, NumberOfItems
 
@@ -14,11 +13,11 @@ def Enqueue(QueueArray, Head, Tail, NumberOfItems, DataToAdd):
 
     return True, QueueArray, Head, Tail, NumberOfItems
 
+
 def Dequeue():
     global NumberOfItems
     global QueueArray
     global Head
-
 
     if NumberOfItems == 0:
         return "FALSE"
@@ -35,11 +34,11 @@ def Dequeue():
     return Result
 
 
-QueueArray = ["" for i in range(10)] #Stores 10 string items
+QueueArray = ["" for i in range(10)]  # Stores 10 string items
 
-Head = 0 #integer
-Tail = 0 #integer
-NumberOfItems = 0 #integer
+Head = 0  # integer
+Tail = 0  # integer
+NumberOfItems = 0  # integer
 
 for _ in range(11):
     data = input("Enter a string value: ")
@@ -53,4 +52,3 @@ for _ in range(11):
 
 print(Dequeue())
 print(Dequeue())
-

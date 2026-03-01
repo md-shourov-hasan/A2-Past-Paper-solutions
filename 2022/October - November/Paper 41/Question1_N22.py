@@ -1,5 +1,6 @@
 global DataArray
-DataArray = [] #Stores 100 integers
+DataArray = []  # Stores 100 integers
+
 
 def ReadFile():
     try:
@@ -10,6 +11,7 @@ def ReadFile():
         file.close()
     except IOError:
         print("File not found!")
+
 
 def FindValues():
     global DataArray
@@ -24,22 +26,21 @@ def FindValues():
             count += 1
     return count
 
+
 def BubbleSort():
     global DataArray
 
     for i in range(len(DataArray) - 1):
         for j in range(len(DataArray) - i - 1):
-            if DataArray[j] > DataArray[j+1]:
-                DataArray[j], DataArray[j+1] = DataArray[j+1], DataArray[j]
-    return  DataArray
+            if DataArray[j] > DataArray[j + 1]:
+                DataArray[j], DataArray[j + 1] = DataArray[j + 1], DataArray[j]
+    return DataArray
 
 
-#main program
+# main program
 
 ReadFile()
 Result = FindValues()
 print(f"The number appeared: {Result} times")
 
 print(BubbleSort())
-
-
