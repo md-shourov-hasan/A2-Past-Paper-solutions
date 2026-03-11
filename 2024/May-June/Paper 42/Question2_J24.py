@@ -60,8 +60,7 @@ class TreeClass:
             print("No nodes")
         else:
             for i in range(self.__NumberNodes):
-                print(
-                    f"Left Pointer: {self.__Tree[i].GetLeft()} Data: {self.__Tree[i].GetData()} Right Pointer: {self.__Tree[i].GetRight()}")
+                print(f"Left Pointer: {self.__Tree[i].GetLeft()} Data: {self.__Tree[i].GetData()} Right Pointer: {self.__Tree[i].GetRight()}")
 
 
 TheTree = TreeClass()
