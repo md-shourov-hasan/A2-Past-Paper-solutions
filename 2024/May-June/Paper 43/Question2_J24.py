@@ -31,11 +31,11 @@ def ReadData():
             text = line.strip().split(",")
             New_Tree = Tree(text[0], int(text[1]), int(text[2]), int(text[3]), text[4])
             Tree_array.append(New_Tree)
-        return Tree_array
         file.close()
-
     except IOError:
         print("File not found!")
+
+    return Tree_array
 
 
 def PrintTrees(New_Tree):
