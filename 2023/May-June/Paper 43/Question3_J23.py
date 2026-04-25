@@ -1,7 +1,6 @@
 Animal = []  # stores upto 20 elements
 Colour = []  # stores upto 10 elements
-global AnimalTopPointer
-global ColourTopPointer
+
 
 AnimalTopPointer = 0
 ColourTopPointer = 0
